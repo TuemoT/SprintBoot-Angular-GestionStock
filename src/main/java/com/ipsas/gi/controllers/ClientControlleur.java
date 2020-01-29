@@ -65,14 +65,16 @@ public class ClientControlleur {
         @DeleteMapping("/clients/{idClient}")
         public Map<String, Boolean> deleteClient(@PathVariable(value = "id") Long idClient)
              throws ResourceNotFoundException {
-            Employee client = clientRepository.findById(idClient)
+            Client client = clientRepository.findById(idClient)
            .orElseThrow(() -> new ResourceNotFoundException("Client not found for this id :: " + idClient));
 
-            employeeRepository.delete(client);
+            clientRepository.delete(client);
             Map<String, Boolean> response = new HashMap<>();
             response.put("deleted", Boolean.TRUE);
             return response;
         }
     
+        
+        
 
 }
