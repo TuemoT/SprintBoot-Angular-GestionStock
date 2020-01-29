@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="tab_category")
+@Table (name="category")
 public class Category implements Serializable{
 	
 	@Id
