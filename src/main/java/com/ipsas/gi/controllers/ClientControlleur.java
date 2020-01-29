@@ -1,11 +1,14 @@
 package com.ipsas.gi.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,6 +62,17 @@ public class ClientControlleur {
             final Client updatedClient = clientRepository.save(client);
             return ResponseEntity.ok(updatedClient);
         } 
+        @DeleteMapping("/clients/{idClient}")
+        public Map<String, Boolean> deleteClient(@PathVariable(value = "id") Long idClient)
+             throws ResourceNotFoundException {
+            Employee client = clientRepository.findById(idClient)
+           .orElseThrow(() -> new ResourceNotFoundException("Client not found for this id :: " + idClient));
+
+            employeeRepository.delete(client);
+            Map<String, Boolean> response = new HashMap<>();
+            response.put("deleted", Boolean.TRUE);
+            return response;
+        }
     
 
 }
