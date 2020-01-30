@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateClientComponent } from './create-client/create-client.component';
+import { EmployeeClientComponent } from './employee-client/employee-client.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateClientComponent,
+    EmployeeClientComponent,
+    ClientDetailsComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,
