@@ -35,6 +35,7 @@ public class Client implements Serializable{
 	private String mail;
 	
 	
+	
 	@OneToMany(mappedBy ="client")
 	List<CommandeClient> cmdClient;
 
