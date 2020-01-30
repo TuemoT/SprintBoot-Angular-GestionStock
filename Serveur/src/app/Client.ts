@@ -1,7 +1,8 @@
-export class Employee {
-    id: number;
-    firstName: string;
-    lastName: string;
-    emailId: string;
-    active: boolean;
+export class Client {
+    idClient: number;
+    nom: string;
+    prenom: string;
+    adresse: string;
+    photo: boolean;
+    mail: String;
 }
