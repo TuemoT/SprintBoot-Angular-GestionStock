@@ -8,7 +8,7 @@ import { Client } from './client';
 })
 export class ClientService {
 
-  private baseUrl = 'http://localhost:7070/SpringBoot-Angular-Keycloak/api/v1/clients';
+  private baseUrl = 'http://localhost:7070/api/v1/clients';
 
   constructor(private http: HttpClient) { }
 
