@@ -8,7 +8,7 @@ import { Client } from './client';
 })
 export class ClientService {
 
-  private baseUrl = 'http://localhost:7070/api/v1/clients';
+  private baseUrl = 'http://localhost:7070/api/v1';
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,7 @@ export class ClientService {
 
   createClient(client: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, Client);
+    return this.http.post<Client>('./client/api/v1/addClient', client);
   }
 
   updateClient(idClient: number, value: any): Observable<Object> {

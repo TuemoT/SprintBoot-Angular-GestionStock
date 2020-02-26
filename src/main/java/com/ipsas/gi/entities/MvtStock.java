@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,6 +22,7 @@ public class MvtStock implements Serializable{
 	public static final int SORTIE = 2;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idMvtStock;
 	
 	@Temporal(TemporalType.TIMESTAMP)

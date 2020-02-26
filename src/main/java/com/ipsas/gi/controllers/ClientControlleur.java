@@ -42,7 +42,7 @@ public class ClientControlleur {
             return ResponseEntity.ok().body(client);
         }
         
-        @PostMapping("/clients")
+        @PostMapping("/addClient")  
         public Client createClient(@Valid @RequestBody Client client) {
             return clientRepository.save(client);
         }
