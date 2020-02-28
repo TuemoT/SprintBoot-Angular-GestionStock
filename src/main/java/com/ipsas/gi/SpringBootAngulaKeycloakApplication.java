@@ -6,8 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 
+
+
 @EnableAutoConfiguration
 @SpringBootApplication
+
 public class SpringBootAngulaKeycloakApplication {
 
 	public static void main(String[] args) {
