@@ -21,11 +21,15 @@ import com.ipsas.gi.entities.Client;
 import com.ipsas.gi.exception.ResourceNotFoundException;
 import com.ipsas.gi.repository.ClientRepository;
 
-@RestController @CrossOrigin(origins = "http://localhost:4200")
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
 public class ClientControlleur {
 	private ClientRepository clientRepository;
 	
+	
+
 	
 	
 	@GetMapping("/clients")
