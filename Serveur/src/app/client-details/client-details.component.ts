@@ -1,4 +1,4 @@
-import { Client } from '../client';
+import { Client } from './../client';
 import { Component, OnInit, Input } from '@angular/core';
 import { ClientService } from '../client.service';
 import { ClientListComponent } from '../client-list/client-list.component';
@@ -20,6 +20,7 @@ export class ClientDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.client = new Client();
+    
 
     this.idClient = this.route.snapshot.params['idClient'];
     

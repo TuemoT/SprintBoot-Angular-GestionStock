@@ -8,16 +8,15 @@ import { Client } from './client';
 })
 export class ClientService {
 
-  private baseUrl = '/api/v1';
+  private baseUrl = '/api/v1/clients';
 
   constructor(private http: HttpClient) { }
-
   getClient(idClient: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${idClient}`);
   }
 
   createClient(client: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, Client);
+    return this.http.post(`${this.baseUrl}`, client);
     
   }
 

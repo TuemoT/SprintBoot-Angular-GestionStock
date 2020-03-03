@@ -3,6 +3,8 @@ export class Client {
     nom: string;
     prenom: string;
     adresse: string;
-    photo: boolean;
+    photo: String;
     mail: String;
 }
+
+

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,21 +22,36 @@ import com.ipsas.gi.entities.Client;
 import com.ipsas.gi.exception.ResourceNotFoundException;
 import com.ipsas.gi.repository.ClientRepository;
 
-
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value="/api/v1")
 public class ClientControlleur {
+	 @Autowired
 	private ClientRepository clientRepository;
 	
-	
+	public ClientControlleur(ClientRepository clientRepository){
+		this.clientRepository=clientRepository;
+	}
 
+	
 	
 	
 	@GetMapping("/clients")
     public List<Client> getAllClients() {
         return clientRepository.findAll();
 	}
-        
+
+	/*
+	 * @PostMapping("save-client") public Client saveClient(@RequestBody Client
+	 * client) { return clientRepository.save(client);
+	 * 
+	 * }
+	 */
+	@GetMapping("cliens-list")
+	public List<Client> allClients() {
+		 return clientRepository.findAll();
+	}
+	
         
         @GetMapping("/clients/{idClient}")
         public ResponseEntity<Client> getClientById(@PathVariable(value = "id") Long idClient)

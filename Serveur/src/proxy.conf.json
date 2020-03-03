@@ -1,5 +1,5 @@
 {
-  "/api/v1": {
+  "/api/v1/clients": {
     "target": "http://localhost:7070",
     "secure": false
   }
