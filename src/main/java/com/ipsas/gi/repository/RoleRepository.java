@@ -1,18 +1,15 @@
 package com.ipsas.gi.repository;
 
-import java.awt.print.Pageable;
+import java.util.Optional;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.ipsas.gi.entities.Role;
+import com.ipsas.gi.entities.RoleName;
 
-public interface RoleRepository extends JpaRepository<Role, Long>{
-	/*
-	 * @Query("select c from Role c where c.role.idRole=:x") public Page<Role>
-	 * listComptes(@Param("x")Long codeCte,Pageable page);
-	 */
 
+@Repository
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Optional<Role> findByName(RoleName roleName);
 }

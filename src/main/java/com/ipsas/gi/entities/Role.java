@@ -1,53 +1,47 @@
 package com.ipsas.gi.entities;
 
-
-
-import java.io.Serializable;
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.NaturalId;
 
 @Entity
-public class Role implements Serializable{
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idRole;
-	
-	private String roleName;
-	
-	@OneToMany(mappedBy="role")
-	private List<Utilisateur> utilisateur;
+@Table(name = "roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Long getIdRole() {
-		return idRole;
-	}
+    @Enumerated(EnumType.STRING)
+    @NaturalId
+    @Column(length = 60)
+    private RoleName name;
 
-	public void setIdRole(Long idRole) {
-		this.idRole = idRole;
-	}
+    public Role() {}
 
-	public String getRoleName() {
-		return roleName;
-	}
+    public Role(RoleName name) {
+        this.name = name;
+    }
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public List<Utilisateur> getUtilisateur() {
-		return utilisateur;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setUtilisateur(List<Utilisateur> utilisateur) {
-		this.utilisateur = utilisateur;
-	}
-	
-	
+    public RoleName getName() {
+        return name;
+    }
 
+    public void setName(RoleName name) {
+        this.name = name;
+    }
 }
