@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gestion.gi.entities.Client;
 import com.gestion.gi.entities.CommandeClient;
+import com.gestion.gi.entities.CommandeForm;
 import com.gestion.gi.repository.ClientRepository;
 import com.gestion.gi.repository.CommandeClientRepository;
 import com.gestion.gi.repository.LigneCmdCltRepository;
@@ -31,12 +32,12 @@ public class CommandeClientControlleur {
 
 		/*
 		 * @PostMapping("/commandesClients") public CommandeClient
-		 * saveCommande(@RequestBody OrderForm orderForm){ Client client=new Client();
-		 * client.setName(orderForm.getClient().getName());
-		 * client.setEmail(orderForm.getClient().getEmail());
+		 * saveCommande(@RequestBody CommandeForm commandeForm){ Client client=new
+		 * Client(); client.setName(commandeForm.getClient().getName());
+		 * client.setEmail(commandeForm.getClient().getEmail());
 		 * client.setAddress(orderForm.getClient().getAddress());
-		 * client.setPhoneNumber(orderForm.getClient().getPhoneNumber());
-		 * client.setUsername(orderForm.getClient().getUsername());
+		 * client.setPhoneNumber(commandeForm.getClient().getPhoneNumber());
+		 * client.setUsername(commandeForm.getClient().getUsername());
 		 * client=clientRepository.save(client); System.out.println(client.getId());
 		 * 
 		 * Order order=new Order(); order.setClient(client); order.setDate(new Date());
@@ -49,5 +50,4 @@ public class CommandeClientControlleur {
 		 * total+=p.getQuantity()*product.getCurrentPrice(); }
 		 * order.setTotalAmount(total); return orderRepository.save(order); }
 		 */
-	    
 }

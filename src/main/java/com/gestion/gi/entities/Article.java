@@ -46,6 +46,20 @@ public class Article implements Serializable {
 
 	}
 
+	public Article(Long idArticle, String codeArticle, String designation, BigDecimal prixUnitaireHT,
+			BigDecimal prixTVA, BigDecimal prixUnitaireTTC, String photos, int quantite, Category category) {
+		super();
+		this.idArticle = idArticle;
+		this.codeArticle = codeArticle;
+		this.designation = designation;
+		this.prixUnitaireHT = prixUnitaireHT;
+		this.prixTVA = prixTVA;
+		this.prixUnitaireTTC = prixUnitaireTTC;
+		this.photos = photos;
+		this.quantite = quantite;
+		this.category = category;
+	}
+
 	public Long getIdArticle() {
 		return idArticle;
 	}
