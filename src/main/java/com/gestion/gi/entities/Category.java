@@ -24,12 +24,21 @@ public class Category implements Serializable{
 	private String codeCategorie;
 	
 	private String Designation;
-	
+    private String photo;
 	@OneToMany (mappedBy="category")
 	private List<Article> article;
 	
 	public Category() {
 		
+	}
+
+	public Category(Long idCategory, String codeCategorie, String designation, String photo, List<Article> article) {
+		super();
+		this.idCategory = idCategory;
+		this.codeCategorie = codeCategorie;
+		Designation = designation;
+		this.photo = photo;
+		this.article = article;
 	}
 
 	public Long getIdArticle() {
@@ -70,5 +79,13 @@ public class Category implements Serializable{
 
 	public void setArticle(List<Article> article) {
 		this.article = article;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 }

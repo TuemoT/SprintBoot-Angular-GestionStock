@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -29,7 +30,9 @@ public class CommandeClient implements Serializable{
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateCommandeClient;
-	
+	 private double totalAmount;
+	 @OneToOne
+	 private Payement payement;
 	@ManyToOne
 	@JoinColumn(name="idClient")
 	private Client client;
@@ -63,6 +66,14 @@ public class CommandeClient implements Serializable{
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 	
 	

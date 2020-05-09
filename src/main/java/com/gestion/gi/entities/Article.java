@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -34,7 +35,8 @@ public class Article implements Serializable {
 	private BigDecimal prixUnitaireTTC;
 
 	private String photos;
-
+	@Transient
+    private int quantite=1;
 	@ManyToOne
 	@JoinColumn(name = "idCategory")
 	private Category category;
