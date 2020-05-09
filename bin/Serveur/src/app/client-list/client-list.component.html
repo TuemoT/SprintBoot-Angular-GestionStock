@@ -1,0 +1,35 @@
+<p>client-list works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>List of customers</h2>
+    </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>IdClient</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Photo</th>
+            <th>E-mail</th>
+            <th>ACTION</th>
+          </tr>
+           </thead>
+          <tbody>
+                <tr *ngFor="let client of clients | async">
+                  <td>{{client.idClient}}</td>
+                   <td>{{client.nom}}</td>
+                 <td>{{client.prenom}}</td>
+                  <td>{{client.adresse}}</td>
+                 <td>{{client.photo}}</td>
+                  <td>{{client.mail}}</td>
+                   <td><button (click)="deleteClient(client.idClient)" class="btn btn-danger">Delete</button>
+                   <button (click)="clientDetails(client.idClient)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              </td>
+              
+          </tbody>
+      </table>
+    </div>
+  
+</div>
